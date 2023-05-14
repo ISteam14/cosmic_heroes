@@ -49,7 +49,6 @@ def update_bullets(screen, stats, sc, inos, bullets):
     if len(inos) == 0:
         bullets.empty()
         create_army(screen, inos)
-        ino.speed_up()
 
 def gun_kill(stats, screen, sc, gun, inos, bullets):
     """столкновение пушки и армии"""
@@ -87,7 +86,7 @@ def create_army(screen, inos):
     number_ino_x = int((600 - 2 * ino_width) / ino_width)
     ino_height = ino.rect.height
     number_ino_y = int((800 - 100 - 2 * ino_height) / ino_height)
-    ino.speed_up()
+
     for row_number in range(number_ino_y - 4):
         for ino_number in range(number_ino_x):
             ino = Ino(screen)
@@ -104,7 +103,3 @@ def check_score(stats, sc):
         sc.image_high_score()
         with open('highscore.txt', 'w') as f:
             f.write(str(stats.high_score))
-
-def speedup(screen, inos):
-    ino = ino.Ino()
-    ino.speed_up()

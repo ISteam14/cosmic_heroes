@@ -13,7 +13,6 @@ class Ino(pygame.sprite.Sprite):
         self.rect.y = self.rect.height
         self.x = float(self.rect.x)
         self.y = float(self.rect.y)
-        self.speed = 0.1
 
     def draw(self):
         """отрисовка пришельца"""
@@ -23,6 +22,3 @@ class Ino(pygame.sprite.Sprite):
         """перемещает пришельцев"""
         self.y += self.speed
         self.rect.y = self.y
-
-    def speed_up(self):
-        self.speed += 0.1
